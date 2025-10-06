@@ -56,4 +56,5 @@ UI test suites for Login and Dashboard Search for OrangeHR using [Playwright](ht
 - Test specs are in `tests/` (`login.spec.ts`, `dashboardsearch.spec.ts`).
 - Test data is managed in `test-data/` (`login.data.ts`, `searchdashboard.data.ts`). Some tests are designed in Data-driven testing, using test-data to make different testcases.
 - Implicit wait timeout is 10seconds, with default headless mode, tests run in parallel. Also screenshot will be taken on failed tests and showed on test report.
-- Step decorator is to enhance test readability in the report.   
+- Step decorator is to enhance test readability in the report.
+- There is a simple github workflow action https://github.com/thangatran/demo_orangehr_automation/actions/workflows/playwright.yml that will run `npx playwright test` when triggering, test-report can be downloaded from Artifacts afterward.   
