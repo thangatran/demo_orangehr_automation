@@ -3,14 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {  
-    "test": "playwright test --project=chromium",
-    "test:firefox": "playwright test --project=firefox",
-    "test:webkit": "playwright test --project=webkit",
-    "test:all": "playwright test",
-    "test:debug": "playwright test --project=chromium --debug",
-    "test:report": "playwright show-report"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",

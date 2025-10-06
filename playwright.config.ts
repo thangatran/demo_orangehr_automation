@@ -51,7 +51,7 @@ export default defineConfig({
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'],launchOptions: {args: ['--start-maximized']} },
+      use: { ...devices['Desktop Safari'] },
     }
   ],
 

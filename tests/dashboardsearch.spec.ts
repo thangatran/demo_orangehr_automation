@@ -4,7 +4,7 @@ import { loginData } from "../test-data/login.data";
 import { DashboardPage } from "../pages/dashboard.page";
 import { searchData } from "../test-data/searchdashboard.data";
 
-test.describe('Demo OrangeHr Search in Dashboard', () => {
+test.describe('Demo OrangeHr Search in Dashboard', {tag: '@search'} , () => {
 
     test.beforeEach(async ({ page }) => {
         const loginPage = new LoginPage(page);

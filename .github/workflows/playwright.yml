@@ -1,9 +1,19 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+        installCmd:
+          description: 'Install dependencies command'
+          default: "npm ci"
+          type: string
+        installPlaywrightCmd:
+          description: 'Install Playwright Browsers command'
+          default: "npx playwright install --with-deps"
+          type: string
+        testCmd:
+          description: 'Test command'
+          default: "npx playwright test"
+          type: string
 jobs:
   test:
     timeout-minutes: 60
@@ -14,11 +24,11 @@ jobs:
       with:
         node-version: lts/*
     - name: Install dependencies
-      run: npm ci
+      run: ${{ inputs.installCmd }}
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: ${{ inputs.installPlaywrightCmd }}
     - name: Run Playwright tests
-      run: npx playwright test
+      run: ${{ inputs.testCmd }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

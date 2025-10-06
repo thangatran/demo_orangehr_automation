@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/login.page';
 import { loginData } from '../test-data/login.data';
 import { DashboardPage } from '../pages/dashboard.page';
 
-test.describe('Demo OrangeHr Login', () => {
+test.describe('Demo OrangeHr Login', {tag: '@login'} , () => {
 
     loginData.validCredentials.forEach (({ userName, password }) => {
         test(`User can login with valid credentials ${userName} ${password}`, async ({ page }) => {
